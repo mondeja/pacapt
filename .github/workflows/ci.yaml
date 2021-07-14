@@ -84,7 +84,13 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: vmactions/freebsd-vm@v0.1.5
+    - uses: actions/cache@v2
+      with:
+        key: freebsd-13_0-b
+        path: |
+          freebsd-13.0.ova
+          id_rsa.pub
+    - uses: mondeja/freebsd-vm@dev
       with:
         usesh: true
         prepare: pkg install -y bash ruby git
