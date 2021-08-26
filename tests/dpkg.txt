@@ -129,7 +129,7 @@ in -Sg
 ou requires 'tasksel' but the tool is not found\.$
 in -S --noconfirm tasksel
 in -Sg
-ou ^u (print-server|ubuntu-desktop|manual)
+ou ^u (print-server|mate-desktop|manual)
 
 in ! if [ "$(cat /etc/*-release | grep -E ^ID= | cut -d'=' -f2)" = "ubuntu" ]; then pacman -Sg ubuntu-desktop; else pacman -Sg print-server; fi
 ou ^(task-print-server|ubuntu-desktop)
