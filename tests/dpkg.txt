@@ -131,8 +131,8 @@ in -S --noconfirm tasksel
 in -Sg
 ou ^u (print-server|mate-desktop|manual)
 
-in ! if [ "$(cat /etc/*-release | grep -E ^ID= | cut -d'=' -f2)" = "ubuntu" ]; then pacman -Sg mate-desktop; else pacman -Sg print-server; fi
-ou ^(task-print-server|mate-desktop)
+in ! if [ "$(cat /etc/*-release | grep -E ^ID= | cut -d'=' -f2)" = "ubuntu" ]; then pacman -Sg ubuntu-desktop; else pacman -Sg print-server; fi
+ou ^(task-print-server|ubuntu-desktop)
 in -R --noconfirm tasksel
 
 # Query information from a .deb package
