@@ -40,7 +40,7 @@ ou ^ii +apt +
 
 # List explicitly installed packages
 in -Qe
-ou (iproute2|adduser)
+ou adduser
 
 # Information of `apt`
 in -Qi apt
