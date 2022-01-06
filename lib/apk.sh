@@ -115,9 +115,9 @@ apk_S() {
   # shellcheck disable=2086
   case ${_EOPT} in
     # Download only
-    ("fetch") shift
-              apk fetch $_TOPT -- "$@" ;;
-          (*) apk add   $_TOPT -- "$@" ;;
+     (fetch*) shift
+              apk fetch $_TOPT "$@" ;;
+          (*) apk add   $_TOPT "$@" ;;
   esac
 }
 

@@ -106,6 +106,7 @@ _PACMAN_detect() {
   _issue2pacman pkg_tools "Bitrig" && return
   _issue2pacman apk "Alpine Linux" && return
   _issue2pacman opkg "OpenWrt" && return
+  _issue2pacman xbps "Void" && return
 
   [ -z "$_PACMAN" ] || return
 
@@ -116,6 +117,9 @@ _PACMAN_detect() {
     && return
   fi
 
+  if uname -a | "$GREP" -q Cygwin; then
+    command -v "apt-cyg" >/dev/null && _PACMAN="apt_cyg" && return
+  fi
   [ -x "/usr/bin/apt-get" ] && _PACMAN="dpkg" && return
   [ -x "/data/data/com.termux/files/usr/bin/apt-get" ] && _PACMAN="dpkg" && return
   [ -x "/usr/bin/cave" ] && _PACMAN="cave" && return
@@ -132,6 +136,7 @@ _PACMAN_detect() {
   [ -x "/bin/opkg" ] && _PACMAN="opkg" && return
   [ -x "/usr/bin/tazpkg" ] && _PACMAN="tazpkg" && return
   [ -x "/usr/bin/swupd" ] && _PACMAN="swupd" && return
+  [ -x "/bin/xbps-install" ] && _PACMAN="xbps" && return
 
   command -v brew >/dev/null && _PACMAN="homebrew" && return
 
@@ -167,6 +172,7 @@ _translate_w() {
     ;;
   "apk")      local_opt="fetch";;
   "opkg")     local_opt="--download-only";;
+  "xbps")     local_opt="-D";;
   *)
     local_opt=""
     local_ret=1
@@ -212,6 +218,7 @@ _translate_noconfirm() {
   "pkgng")  local_opt="-y";;
   "tazpkg") local_opt="--auto";;
   "apk")    local_opt="";;
+  "xbps")   local_opt="-y";;
   *)
     local_opt=""
     local_ret=1
@@ -230,8 +237,10 @@ _translate_all() {
 
   local_debug="$(_translate_debug)" || return 1
   local_noconfirm="$(_translate_noconfirm)" || return 1
-  local_args="$(_translate_w)" || return 1
 
+  # WARNING: Order does matter, see also
+  #   https://github.com/icy/pacapt/pull/219#issuecomment-1006079629
+  local_args="$(_translate_w)" || return 1
   local_args="${local_args}${local_noconfirm:+ }${local_noconfirm}"
   local_args="${local_args}${local_debug:+ }${local_debug}"
 
@@ -251,7 +260,7 @@ _print_supported_operations() {
   echo
 }
 
-# NOTE: A few packager manager will require their own implemention
+# NOTE: A few package managers will require their own implementation
 # NOTE: hence it's better to give some flexible option here.
 _quiet_field1() {
   if [ -z "${_TOPT}" ]; then

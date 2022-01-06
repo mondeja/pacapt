@@ -3,39 +3,40 @@
 # Purpose: A wrapper for all Unix package managers
 # License: Fair license (http://www.opensource.org/licenses/fair)
 # Source : http://github.com/icy/pacapt/
-# Version: 3.0.4
+# Version: 3.0.7
 # Authors: Anh K. Huynh et al.
 
-# Copyright (C) 2010 - 2021 \
-#                           | 10sr (10sr)
-#                           | Alexander Dupuy (dupuy)
-#                           | Anh K. Huynh (icy)
-#                           | Antony Lee (anntzer)
-#                           | Alex Lyon (Arcterus)
-#                           | Álvaro Mondéjar (mondeja)
-#                           | Carl X. Su (bcbcarl)
-#                           | Cuong Manh Le (Gnouc)
-#                           | Daniel YC Lin (dlintw)
-#                           | Danny George (dangets)
-#                           | Darshit Shah (darnir)
-#                           | Dmitry Kudriavtsev (dkudriavtsev)
-#                           | Eric Crosson (EricCrosson)
-#                           | Evan Relf (evanrelf)
-#                           | GijsTimmers (GijsTimmers)
-#                           | Hà-Dương Nguyễn (cmpitg)
-#                           | Huy Ngô (NgoHuy)
-#                           | James Pearson (xiongchiamiov)
-#                           | Janne Heß (dasJ)
-#                           | Jiawei Zhou (4679)
+# Copyright (C) 2010 - 2022 \
+#                           | 10sr (@10sr)
+#                           | Alexander Dupuy (@dupuy)
+#                           | Anh K. Huynh (@icy)
+#                           | Antony Lee (@anntzer)
+#                           | Alex Lyon (@Arcterus)
+#                           | Álvaro Mondéjar (@mondeja)
+#                           | Carl X. Su (@bcbcarl)
+#                           | Cuong Manh Le (@Gnouc)
+#                           | Daniel YC Lin (@dlintw)
+#                           | Danny George (@dangets)
+#                           | Darshit Shah (@darnir)
+#                           | Dmitry Kudriavtsev (@dkudriavtsev)
+#                           | Eric Crosson (@EricCrosson)
+#                           | Evan Relf (@evanrelf)
+#                           | GijsTimmers (@GijsTimmers)
+#                           | Hà-Dương Nguyễn (@cmpitg)
+#                           | Huy Ngô (@NgoHuy)
+#                           | James Pearson (@xiongchiamiov)
+#                           | Janne Heß (@dasJ)
+#                           | Jiawei Zhou (@4679)
 #                           | Karol Blazewicz
-#                           | Kevin Brubeck (unhammer)
-#                           | Konrad Borowski (xfix)
-#                           | Kylie McClain (somasis)
-#                           | Gen Li (Rami3L)
-#                           | Valerio Pizzi (Pival81)
-#                           | Siôn Le Roux (sinisterstuf)
-#                           | Thiago Perrotta (thiagowfx)
-#                           | Vojtech Letal (letalvoj)
+#                           | Kevin Brubeck (@unhammer)
+#                           | Konrad Borowski (@xfix)
+#                           | Kylie McClain (@somasis)
+#                           | Gen Li (@Rami3L)
+#                           | Valerio Pizzi (@Pival81)
+#                           | Siôn Le Roux (@sinisterstuf)
+#                           | Tabulate (@TabulateJarl8)
+#                           | Thiago Perrotta (@thiagowfx)
+#                           | Vojtech Letal (@letalvoj)
 #
 # Usage of the works is permitted provided that this instrument is
 # retained with the works, so that any entity that uses the works is
@@ -46,38 +47,39 @@
 
 _print_pacapt_version() {
   cat <<_EOF_
-pacapt version '3.0.4'
+pacapt version '3.0.7'
 
-Copyright (C) 2010 - 2021 \\
-                          | 10sr (10sr)
-                          | Alexander Dupuy (dupuy)
-                          | Anh K. Huynh (icy)
-                          | Antony Lee (anntzer)
-                          | Alex Lyon (Arcterus)
-                          | Álvaro Mondéjar (mondeja)
-                          | Carl X. Su (bcbcarl)
-                          | Cuong Manh Le (Gnouc)
-                          | Daniel YC Lin (dlintw)
-                          | Danny George (dangets)
-                          | Darshit Shah (darnir)
-                          | Dmitry Kudriavtsev (dkudriavtsev)
-                          | Eric Crosson (EricCrosson)
-                          | Evan Relf (evanrelf)
-                          | GijsTimmers (GijsTimmers)
-                          | Hà-Dương Nguyễn (cmpitg)
-                          | Huy Ngô (NgoHuy)
-                          | James Pearson (xiongchiamiov)
-                          | Janne Heß (dasJ)
-                          | Jiawei Zhou (4679)
+Copyright (C) 2010 - 2022 \\
+                          | 10sr (@10sr)
+                          | Alexander Dupuy (@dupuy)
+                          | Anh K. Huynh (@icy)
+                          | Antony Lee (@anntzer)
+                          | Alex Lyon (@Arcterus)
+                          | Álvaro Mondéjar (@mondeja)
+                          | Carl X. Su (@bcbcarl)
+                          | Cuong Manh Le (@Gnouc)
+                          | Daniel YC Lin (@dlintw)
+                          | Danny George (@dangets)
+                          | Darshit Shah (@darnir)
+                          | Dmitry Kudriavtsev (@dkudriavtsev)
+                          | Eric Crosson (@EricCrosson)
+                          | Evan Relf (@evanrelf)
+                          | GijsTimmers (@GijsTimmers)
+                          | Hà-Dương Nguyễn (@cmpitg)
+                          | Huy Ngô (@NgoHuy)
+                          | James Pearson (@xiongchiamiov)
+                          | Janne Heß (@dasJ)
+                          | Jiawei Zhou (@4679)
                           | Karol Blazewicz
-                          | Kevin Brubeck (unhammer)
-                          | Konrad Borowski (xfix)
-                          | Kylie McClain (somasis)
-                          | Gen Li (Rami3L)
-                          | Valerio Pizzi (Pival81)
-                          | Siôn Le Roux (sinisterstuf)
-                          | Thiago Perrotta (thiagowfx)
-                          | Vojtech Letal (letalvoj)
+                          | Kevin Brubeck (@unhammer)
+                          | Konrad Borowski (@xfix)
+                          | Kylie McClain (@somasis)
+                          | Gen Li (@Rami3L)
+                          | Valerio Pizzi (@Pival81)
+                          | Siôn Le Roux (@sinisterstuf)
+                          | Tabulate (@TabulateJarl8)
+                          | Thiago Perrotta (@thiagowfx)
+                          | Vojtech Letal (@letalvoj)
 
 Usage of the works is permitted provided that this
 instrument is retained with the works, so that any
@@ -87,7 +89,7 @@ DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY.
 _EOF_
 }
 
-export PACAPT_VERSION='3.0.4'
+export PACAPT_VERSION='3.0.7'
 
 _help() {
   cat <<'EOF'
@@ -287,6 +289,7 @@ _PACMAN_detect() {
   _issue2pacman pkg_tools "Bitrig" && return
   _issue2pacman apk "Alpine Linux" && return
   _issue2pacman opkg "OpenWrt" && return
+  _issue2pacman xbps "Void" && return
 
   [ -z "$_PACMAN" ] || return
 
@@ -297,6 +300,9 @@ _PACMAN_detect() {
     && return
   fi
 
+  if uname -a | "$GREP" -q Cygwin; then
+    command -v "apt-cyg" >/dev/null && _PACMAN="apt_cyg" && return
+  fi
   [ -x "/usr/bin/apt-get" ] && _PACMAN="dpkg" && return
   [ -x "/data/data/com.termux/files/usr/bin/apt-get" ] && _PACMAN="dpkg" && return
   [ -x "/usr/bin/cave" ] && _PACMAN="cave" && return
@@ -313,6 +319,7 @@ _PACMAN_detect() {
   [ -x "/bin/opkg" ] && _PACMAN="opkg" && return
   [ -x "/usr/bin/tazpkg" ] && _PACMAN="tazpkg" && return
   [ -x "/usr/bin/swupd" ] && _PACMAN="swupd" && return
+  [ -x "/bin/xbps-install" ] && _PACMAN="xbps" && return
 
   command -v brew >/dev/null && _PACMAN="homebrew" && return
 
@@ -346,6 +353,7 @@ _translate_w() {
     ;;
   "apk")      local_opt="fetch";;
   "opkg")     local_opt="--download-only";;
+  "xbps")     local_opt="-D";;
   *)
     local_opt=""
     local_ret=1
@@ -389,6 +397,7 @@ _translate_noconfirm() {
   "pkgng")  local_opt="-y";;
   "tazpkg") local_opt="--auto";;
   "apk")    local_opt="";;
+  "xbps")   local_opt="-y";;
   *)
     local_opt=""
     local_ret=1
@@ -407,8 +416,10 @@ _translate_all() {
 
   local_debug="$(_translate_debug)" || return 1
   local_noconfirm="$(_translate_noconfirm)" || return 1
-  local_args="$(_translate_w)" || return 1
 
+  # WARNING: Order does matter, see also
+  #   https://github.com/icy/pacapt/pull/219#issuecomment-1006079629
+  local_args="$(_translate_w)" || return 1
   local_args="${local_args}${local_noconfirm:+ }${local_noconfirm}"
   local_args="${local_args}${local_debug:+ }${local_debug}"
 
@@ -586,9 +597,9 @@ apk_S() {
   # shellcheck disable=2086
   case ${_EOPT} in
     # Download only
-    ("fetch") shift
-              apk fetch $_TOPT -- "$@" ;;
-          (*) apk add   $_TOPT -- "$@" ;;
+     (fetch*) shift
+              apk fetch $_TOPT "$@" ;;
+          (*) apk add   $_TOPT "$@" ;;
   esac
 }
 
@@ -640,6 +651,47 @@ apk_Sy() {
 apk_U() {
   # shellcheck disable=2086
   apk add --allow-untrusted $_TOPT -- "$@"
+}
+
+
+_apt_cyg_init() {
+  :
+}
+
+apt_cyg_Ss() {
+  apt-cyg search "$@"
+}
+
+apt_cyg_S() {
+  apt-cyg install "$@"
+}
+
+apt_cyg_Sy() {
+  apt-cyg update "$@"
+}
+
+apt_cyg_Q() {
+  apt-cyg list "$@"
+}
+
+apt_cyg_Qi() {
+  apt-cyg show "$@"
+}
+
+apt_cyg_Ql() {
+  for pkg in "$@"; do
+    if [ "$_TOPT" = "q" ]; then
+      apt-cyg listfiles "$pkg"
+    else
+       apt-cyg listfiles "$pkg" \
+       | pkg="$pkg" \
+         awk '{printf("%s %s\n", ENVIRON["pkg"], $0)}'
+    fi
+  done
+}
+
+apt_cyg_R() {
+  apt-cyg remove "$@"
 }
 #_!_POSIX_# 
 #_!_POSIX_# 
@@ -1325,11 +1377,16 @@ macports_Scc() {
 }
 
 macports_S() {
-  if [ "$_TOPT" = "fetch" ]; then
+  # shellcheck disable=SC2153
+  case "$_EOPT" in
+  fetch*)
+    shift
     port patch "$@"
-  else
+    ;;
+  *)
     port install "$@"
-  fi
+    ;;
+  esac
 }
 
 
@@ -1530,11 +1587,15 @@ pkgng_Scc() {
 
 pkgng_S() {
   # shellcheck disable=SC2153
-  if [ "$_EOPT" = "fetch" ]; then
+  case "$_EOPT" in
+  fetch*)
+    shift
     pkg fetch "$@"
-  else
+    ;;
+  *)
     pkg install "$@"
-  fi
+    ;;
+  esac
 }
 
 
@@ -1624,7 +1685,7 @@ pkg_tools_Sl() {
 pkg_tools_Suy() {
   # pkg_tools doesn't really have any concept of a database
   # there's actually not really any database to update, so
-  # this function is mostly just for convienience since on arch
+  # this function is mostly just for convenience since on arch
   # doing -Su is normally a bad thing to do since it's a partial upgrade
 
   pkg_tools_Su "$@"
@@ -1681,7 +1742,7 @@ portage_Ql() {
   elif [ -x '/usr/bin/equery' ]; then
     equery files "$@"
   else
-    _error "'portage-utils' or 'gentoolkit' package is required to perform this opreation."
+    _error "'portage-utils' or 'gentoolkit' package is required to perform this operation."
   fi
 }
 
@@ -1729,7 +1790,7 @@ portage_Rs() {
 }
 
 portage_R() {
-  emerge --depclean "@"
+  emerge --depclean "$@"
 }
 
 portage_Si() {
@@ -2091,6 +2152,64 @@ tlmgr_U() {
 
 
 
+_xbps_init() {
+  :
+}
+
+xbps_Q() {
+  xbps-query -l
+}
+
+xbps_Qe() {
+  xbps-query -m
+}
+
+xbps_Qi() {
+  xbps-query -s "$@"
+}
+
+xbps_Ql() {
+  xbps-query -f "$@"
+}
+
+xbps_Qo() {
+  xbps-query -o "$@"
+}
+
+xbps_Qs() {
+  xbps-query -s "$@"
+}
+
+xbps_S() {
+  xbps-install "$@"
+}
+
+xbps_Ss() {
+  xbps-query -Rs "$@"
+}
+
+xbps_Su() {
+  xbps-install -u
+}
+
+xbps_Sy() {
+  xbps-install -S
+}
+
+xbps_Suy() {
+  xbps-install -Su
+}
+
+xbps_R() {
+  xbps-remove "$@"
+}
+
+xbps_Scc() {
+  xbps-remove -O
+}
+
+
+
 _yum_init() {
   :
 }
@@ -2424,6 +2543,13 @@ _validate_operation() {
   "apk_Suy") ;;
   "apk_Sy") ;;
   "apk_U") ;;
+  "apt_cyg_Ss") ;;
+  "apt_cyg_S") ;;
+  "apt_cyg_Sy") ;;
+  "apt_cyg_Q") ;;
+  "apt_cyg_Qi") ;;
+  "apt_cyg_Ql") ;;
+  "apt_cyg_R") ;;
   "cave_Q") ;;
   "cave_Qi") ;;
   "cave_Ql") ;;
@@ -2642,6 +2768,19 @@ _validate_operation() {
   "tlmgr_Ss") ;;
   "tlmgr_Suy") ;;
   "tlmgr_U") ;;
+  "xbps_Q") ;;
+  "xbps_Qe") ;;
+  "xbps_Qi") ;;
+  "xbps_Ql") ;;
+  "xbps_Qo") ;;
+  "xbps_Qs") ;;
+  "xbps_S") ;;
+  "xbps_Ss") ;;
+  "xbps_Su") ;;
+  "xbps_Sy") ;;
+  "xbps_Suy") ;;
+  "xbps_R") ;;
+  "xbps_Scc") ;;
   "yum_Q") ;;
   "yum_Qe") ;;
   "yum_Qi") ;;
@@ -2969,7 +3108,7 @@ if [ -n "$PACAPT_DEBUG" ]; then
     # shellcheck disable=SC3044
     declare -f "${_PACMAN}_${_POPT}${_SOPT}"
   else
-    _error "Attempted to print the defintion of the method '${_PACMAN}_${_POPT}${_SOPT}'."
+    _error "Attempted to print the definition of the method '${_PACMAN}_${_POPT}${_SOPT}'."
     _error "However, unable to find method ('declare'). Maybe your shell is purely POSIX?"
   fi
 else

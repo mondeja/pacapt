@@ -1,3 +1,23 @@
+## v3.0.7
+
+* `lib/{apk,macports,pkgng}`: Fixed fetch option #214
+* `lib/portage`: Fixed syntax error #218 (Thanks @owl4ce)
+
+## v3.0.6
+
+* New support `Void Linux` (Thanks Tabulate @TabulateJarl8)
+
+## v3.0.5
+
+* `lib/apt-cyg`: Add initial support for `apt-cyg` on Cygwin systems
+* Rewrote `bin/gen_tests.rb` in `bash` (@mondeja)
+* Minor typo/tests fixes
+
+WARNING: The script won't work with docker container image
+`opensuse/tumbleweed:latest`. See also
+https://bugzilla.opensuse.org/show_bug.cgi?id=1190670
+and https://github.com/moby/moby/pull/42836
+
 ## v3.0.4
 
 * `lib/swupd`: Add tests and more operations (credit: @mondeja)
@@ -107,7 +127,7 @@ For developers:
 
 ## v2.3.14
 
-* `lib/homebrew`: `brew upgrade` is equivalant to `brew upgrade --all`.
+* `lib/homebrew`: `brew upgrade` is equivalent to `brew upgrade --all`.
   See #90 and #101.
 * Support `Clear Linux`. See #94.
 
@@ -134,7 +154,7 @@ For developers:
 
 * `bin/gen_tests.rb`: Add;
 * `lib/dpkg`: Add and update test cases;
-* `CONTRIBUTING`: Add new section `Writting test cases`.
+* `CONTRIBUTING`: Add new section `Writing test cases`.
 
 ## v2.3.11
 
